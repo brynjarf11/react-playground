@@ -1,0 +1,78 @@
+{
+  "name": "react-intro",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/react-intro"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-intro:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-intro:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "react-intro:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nrwl/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-intro:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-intro:build:development"
+        },
+        "production": {
+          "buildTarget": "react-intro:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/react-intro"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "coverage/react-intro"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "react-intro:build"
+      }
+    }
+  },
+  "tags": []
+}
