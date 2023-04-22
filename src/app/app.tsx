@@ -27,11 +27,13 @@ const DUMMY_EXPENSES = [
     date: new Date(2022, 7, 12),
   },
   {
-    id: 'e4',
+    id: 'e4', 
     title: 'New Desk (Wooden)',
     amount: 300000,
     date: new Date(2022, 8, 12),
   },
+
+  
 ];
 
 export function App() {

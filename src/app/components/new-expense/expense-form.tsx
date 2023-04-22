@@ -17,45 +17,21 @@ export function ExpenseForm(props: ExpenseFormProps) {
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
-  // const [enteredFormState, setEnteredFormState] = useState({
-  //   title: '',
-  //   amount: '',
-  //   date: '',
-  // } as ExpenseFormState);
-
   const titleChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    // setEnteredFormState((previousState: ExpenseFormState) => {
-    //   return {
-    //     ...previousState,
-    //     title: event.target.value
-    //   };
-    // });
     setEnteredTitle(event.target.value);
   };
 
   const amountChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    // setEnteredFormState((previousState: ExpenseFormState) => {
-    //   return {
-    //     ...previousState,
-    //     amount: event.target.value
-    //   };
-    // });
     setEnteredAmount(event.target.value);
   };
 
   const dateChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    // setEnteredFormState((previousState: ExpenseFormState) => {
-    //   return {
-    //     ...previousState,
-    //     date: event.target.value
-    //   };
-    // });
     setEnteredDate(event.target.value);
   };
 
