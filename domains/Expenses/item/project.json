@@ -1,0 +1,24 @@
+{
+  "name": "domains-expenses-item",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "domains/expenses/item/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["domains/expenses/item/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/domains/expenses/item"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../../coverage/domains/expenses/item"
+      }
+    }
+  }
+}
